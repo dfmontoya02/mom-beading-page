@@ -1,0 +1,77 @@
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff9f0; /* Light, warm paper tone */
+    border: 2px dashed #d4a373; /* Hand-drawn dashed border */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-family: 'Caveat', cursive, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #b85c38;
+  }
+  
+  .content {
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .content p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Updated gallery styling */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  
+  .galleryImage {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Apply subtle rotations to each image for a scrapbook feel */
+  .galleryImage:nth-child(1) {
+    transform: rotate(-3deg);
+  }
+  .galleryImage:nth-child(2) {
+    transform: rotate(2deg);
+  }
+  .galleryImage:nth-child(3) {
+    transform: rotate(-1deg);
+  }
+  
+  .backButton {
+    display: block;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    background-color: #b85c38;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .backButton:hover {
+    background-color: #a0482a;
+  }
+  

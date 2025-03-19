@@ -1,0 +1,26 @@
+.siteTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 2rem 0;
+    /* Create a gradient effect on the text */
+    background: linear-gradient(45deg, #3F888F, #2d666c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Add a subtle shadow and an entrance animation */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 1.5s ease-out;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

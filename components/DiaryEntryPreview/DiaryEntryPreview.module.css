@@ -1,0 +1,64 @@
+.card {
+    position: relative;
+    background-color: #fff9f0;       /* Warm paper-like background */
+    border: 2px dashed #d4a373;       /* Hand-drawn dashed border */
+    border-radius: 8px;
+    padding: 1rem 1.5rem;            /* Adjusted padding for a tighter, neat look */
+    margin: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* On hover, the card lifts slightly */
+  .card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Give each card a slightly different rotation for a scattered, diary-like effect */
+  .card:nth-child(odd) {
+    transform: rotate(-3deg);
+  }
+  .card:nth-child(even) {
+    transform: rotate(2deg);
+  }
+  
+  /* Add a "pushpin" at the top center of the card */
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #b85c38;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .title {
+    font-family: 'Caveat', cursive, sans-serif;  /* Handwritten vibe */
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+    color: var(--color-accent);
+    text-align: center;
+  }
+  
+  .snippet {
+    font-family: 'Merriweather', serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    text-align: justify;
+  }
+  
+  .readMore {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    color: var(--color-accent);
+    text-decoration: none;
+    margin-top: 0.5rem;
+  }
+  

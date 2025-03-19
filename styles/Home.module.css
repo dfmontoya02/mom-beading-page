@@ -1,0 +1,25 @@
+/* styles/Home.module.css */
+
+.welcomeContainer {
+  padding: 2rem;
+  background: var(--color-bg-alt);
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: var(--color-accent);
+}
+
+.diaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+}

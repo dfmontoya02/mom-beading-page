@@ -1,86 +1,85 @@
 // pages/index.tsx
-// Correct usage if your alias is "@components/*": ["components/*"]
-import AnimatedSection from '@components/AnimatedSection/AnimatedSection';
-import FlashCard from '@components/FlashCard/FlashCard';
 import Layout from '@components/Layout/Layout';
+import AnimatedSection from '@components/AnimatedSection/AnimatedSection';
+import SiteTitle from '@components/SiteTitle/SiteTitle';
+import BeadingVenueSection from '@components/BeadingVenueSection/BeadingVenueSection';
+import FlashCard from '@components/FlashCard/FlashCard';
+import DiaryEntryPreview from '@components/DiaryEntryPreview/DiaryEntryPreview';
+import StoryPreview from '@components/StoryPreview/StoryPreview';
+import styles from '../styles/Home.module.css';
+
+const stories = [
+  {
+    id: 'joy',
+    title: 'A Bundle of Joy',
+    snippet:
+      "In the midst of life's challenges, I happened upon this little bundle of joy and found myself saying yes. Looking back, I’m beyond grateful...",
+    // thumbnail: '/images/Levi1.jpg', // Ensure this path is correct (public/images/Levi1.jpg)
+  },
+  {
+    id: 'victories',
+    title: 'Victories',
+    snippet:
+      "This summer, we celebrated a milestone that filled our hearts with pride—my son's college graduation...",
+  },
+];
 
 export default function Home() {
   return (
     <Layout>
-      {/* Hero / Introduction - also leads into Beading */}
+      <SiteTitle />
+
+      {/* Hero / Welcome Section */}
       <AnimatedSection>
-        <h1>Welcome to My Beading Venue First!</h1>
-        <p style={{ maxWidth: '700px', margin: '1rem auto' }}>
-          This space is all about sharing the things that bring joy to life—starting 
-          with my beading projects. I love experimenting with patterns, colors, and 
-          techniques, and I hope these creations inspire you!
-        </p>
+        <div className={styles.welcomeContainer}>
+          <h1>Welcome to my little corner of expression!</h1>
+          <p>
+            Here, you'll discover a collection of my beading projects, fun and delicious recipes, and a few heartwarming stories that I've gathered along the way. This space is all about sharing the things that bring joy to life—whether it’s the spark of a new bead design, a tasty dish to try, or a simple story to warm the soul.
+          </p>
+          <p>
+            I invite you to explore and get inspired. I hope you find a sense of resonance through what I've shared. Thanks for stopping by—let's celebrate the beauty of expression together!
+          </p>
+        </div>
       </AnimatedSection>
-
-      {/* Beading Venue Section */}
-      <AnimatedSection>
-        <a id="beading" />
-        <h2>Beading Venue</h2>
-        <p style={{ maxWidth: '700px', margin: '1rem auto' }}>
-          Welcome to the Beading Venue! Here, I’ll share some of my beading projects, 
-          unique designs, and patterns, along with techniques to spark your own creativity. 
-          Whether you're a seasoned beader or just starting out, have fun exploring!
-        </p>
-
-        <FlashCard
-          title="Crystal Earrings"
-          content="Sparkly earrings made with Swarovski crystals and seed beads."
-          imageSrc="/images/beading1.jpg"
-        />
-        <FlashCard
-          title="Statement Necklace"
-          content="Bold design featuring gemstone beads and intricate patterns."
-          imageSrc="/images/beading2.jpg"
-        />
-      </AnimatedSection>
-
+      
+      {/* Beading Venue Section reused from the component */}
+      <BeadingVenueSection />
+      
       {/* Food Corner Section */}
       <AnimatedSection>
         <a id="food" />
         <h2>Food Corner</h2>
         <p style={{ maxWidth: '700px', margin: '1rem auto' }}>
-          Join me at the food corner where cooking is a venture of creativity! Let’s delight 
-          our taste buds with flavors and experiences that turn simple ingredients into 
-          mouthwatering dishes.
+          Join me at the food corner where cooking is a venture of creativity! Let’s delight our taste buds with flavors and experiences that turn simple ingredients into mouthwatering dishes.
         </p>
-
         <FlashCard
           title="Delicious Pasta"
-          content="Try out this creamy tomato-based pasta that’s super easy to make!"
+          description="Try out this creamy tomato-based pasta that’s super easy to make!"
           imageSrc="/images/pasta.jpg"
+          href="/food-details/1"
         />
         <FlashCard
           title="Hearty Soup"
-          content="Warm up with a classic chicken soup loaded with veggies."
+          description="Warm up with a classic chicken soup loaded with veggies."
           imageSrc="/images/soup.jpg"
+          href="/food-details/2"
         />
       </AnimatedSection>
-
-      {/* Story Alley Section */}
+      
+      {/* Stories Preview Section */}
       <AnimatedSection>
-        <a id="story" />
-        <h2>Story Alley</h2>
-        <p style={{ maxWidth: '700px', margin: '1rem auto' }}>
-          Step into the Story Alley—a collection of brief tales, personal experiences, and 
-          reflections that have shaped my journey. These are snapshots of moments that 
-          bring comfort, spark curiosity, or offer a fresh perspective.
-        </p>
-
-        <FlashCard
-          title="A Rainy Afternoon"
-          content="One afternoon, the rain poured like never before, turning out to be the best day..."
-          imageSrc="/images/rain.jpg"
-        />
-        <FlashCard
-          title="Finding Home"
-          content="A short reflection on what ‘home’ means, beyond walls and a roof."
-          imageSrc="/images/home.jpg"
-        />
+        <h2 className={styles.sectionTitle}>Stories</h2>
+        <div className={styles.diaryGrid}>
+  {stories.map((story) => (
+    <DiaryEntryPreview
+      key={story.id}
+      id={story.id}
+      title={story.title}
+      snippet={story.snippet}
+      thumbnail={story.thumbnail}  // This will render the image if available
+    />
+  ))}
+</div>
       </AnimatedSection>
     </Layout>
   );

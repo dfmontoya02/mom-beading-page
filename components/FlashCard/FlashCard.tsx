@@ -1,24 +1,28 @@
-// components/FlashCard/FlashCard.tsx
-import { ReactNode } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './FlashCard.module.css';
 
 type FlashCardProps = {
   title: string;
-  content: ReactNode;
-  imageSrc?: string;
+  description: string;
+  imageSrc: string;
+  href: string;
 };
 
-export default function FlashCard({ title, content, imageSrc }: FlashCardProps) {
+export default function FlashCard({ title, description, imageSrc, href }: FlashCardProps) {
   return (
-    <motion.div
-      className={styles.card}
-      whileHover={{ scale: 1.02 }}
-      transition={{ type: 'spring', stiffness: 200, damping: 10 }}
-    >
-      {imageSrc && <img src={imageSrc} alt={title} className={styles.image} />}
-      <h3>{title}</h3>
-      <p>{content}</p>
-    </motion.div>
+    <Link href={href}>
+      <motion.div
+        className={styles.card}
+        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.2 }}
+      >
+        <img src={imageSrc} alt={title} className={styles.image} />
+        <div className={styles.content}>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
+      </motion.div>
+    </Link>
   );
 }
