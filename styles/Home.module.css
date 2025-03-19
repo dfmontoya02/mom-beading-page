@@ -1,5 +1,3 @@
-/* styles/Home.module.css */
-
 .welcomeContainer {
   padding: 2rem;
   background: var(--color-bg-alt);
@@ -16,10 +14,20 @@
   color: var(--color-accent);
 }
 
-.diaryGrid {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   max-width: 1000px;
+}
+
+/* Optionally, you can reuse diaryGrid styles for the diary section */
+.diaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  justify-items: center;
 }

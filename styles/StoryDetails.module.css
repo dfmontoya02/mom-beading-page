@@ -1,77 +1,86 @@
-.container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #fff9f0; /* Light, warm paper tone */
-    border: 2px dashed #d4a373; /* Hand-drawn dashed border */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .title {
-    font-family: 'Caveat', cursive, sans-serif;
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #b85c38;
-  }
-  
-  .content {
-    font-family: 'Merriweather', serif;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #333;
-    margin-bottom: 2rem;
-  }
-  
-  .content p {
-    margin-bottom: 1rem;
-  }
-  
-  /* Updated gallery styling */
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-  }
-  
-  .galleryImage {
-    max-width: 250px;
-    width: 100%;
-    height: auto;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Apply subtle rotations to each image for a scrapbook feel */
-  .galleryImage:nth-child(1) {
-    transform: rotate(-3deg);
-  }
-  .galleryImage:nth-child(2) {
-    transform: rotate(2deg);
-  }
-  .galleryImage:nth-child(3) {
-    transform: rotate(-1deg);
-  }
-  
-  .backButton {
-    display: block;
-    margin: 0 auto;
-    padding: 0.75rem 1.5rem;
-    background-color: #b85c38;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .backButton:hover {
-    background-color: #a0482a;
-  }
-  
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Adjust height as needed */
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroOverlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.heroTitle {
+  font-family: 'Caveat', cursive;
+  font-size: 3rem;
+  color: #fff;
+  margin: 0;
+}
+
+/* Content Container */
+.contentContainer {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Card for story content */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Merriweather', serif;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Gallery for "Bundle of Joy" (optional) */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.galleryImage {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+/* Back Button */
+.backButton {
+  display: block;
+  margin: 0 auto 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #8b4513;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: #7a3d10;
+}

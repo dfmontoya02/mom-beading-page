@@ -1,0 +1,82 @@
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto; /* Centered with top/bottom spacing */
+    overflow: hidden;
+    border-radius: 8px;
+    background: #fff; /* Remove the black fallback */
+  }
+  
+  .slide {
+    display: none;
+    position: relative;
+  }
+  
+  .slide.active {
+    display: block;
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .slideLink {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .image {
+    width: 100%;
+    height: 400px; /* Fixed height so images have a consistent size */
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Overlay that appears on hover */
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Force white text inside the overlay in case of global overrides */
+  .overlay h3,
+  .overlay p {
+    color: #fff !important;
+  }
+  
+  .slideLink:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Dots container below the slider */
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px; /* Spacing between slider and dots */
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .activeDot {
+    background: rgba(250, 45, 208, 0.8);
+  }
+  

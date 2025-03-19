@@ -1,0 +1,50 @@
+.wrapper {
+    background-color: #fef7e0;        /* Soft, warm background */
+    border: 2px solid #f0c14b;        /* Golden, chalkboard-like border */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    margin: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card {
+    background-color: #fff;           /* Inner card background */
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .title {
+    font-family: 'Caveat', cursive, sans-serif;  /* Handwritten feel */
+    font-size: 1.5rem;
+    color: #8b4513;               /* Warm chocolate brown */
+    margin-bottom: 0.5rem;
+  }
+  
+  .description {
+    font-family: 'Merriweather', serif;  /* Readable, classic look */
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .readMore {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .readMore:hover {
+    color: #2d666c;
+  }
+  

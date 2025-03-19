@@ -6,6 +6,8 @@ import BeadingVenueSection from '@components/BeadingVenueSection/BeadingVenueSec
 import FlashCard from '@components/FlashCard/FlashCard';
 import DiaryEntryPreview from '@components/DiaryEntryPreview/DiaryEntryPreview';
 import StoryPreview from '@components/StoryPreview/StoryPreview';
+import FoodRecipePreview from '@components/FoodRecipePreview/FoodRecipePreview';
+import FoodRecipeSlider from '@components/FoodRecipeSlider/FoodRecipeSlider';
 import styles from '../styles/Home.module.css';
 
 const stories = [
@@ -22,6 +24,51 @@ const stories = [
     snippet:
       "This summer, we celebrated a milestone that filled our hearts with pride—my son's college graduation...",
   },
+  {
+    id: 'calm',
+    title: 'Moments of Calm',
+    snippet:
+      "Sometimes, amidst the chaos, there's a moment of pure peace that anchors us, allowing us to catch our breath and find our center.",
+    // No thumbnail; this one will be the non-tilted, centered preview.
+  },
+];
+
+const foodRecipes = [
+  {
+    id: 'pasta',
+    title: 'Delicious Pasta',
+    description:
+      "A creamy tomato-based pasta infused with fresh basil and garlic—a perfect blend of comfort and flavor.",
+    imageSrc: '/images/pasta.jpg',
+  },
+  {
+    id: 'soup',
+    title: 'Hearty Soup',
+    description:
+      "A classic chicken soup loaded with seasonal vegetables—a bowl of warmth on a chilly day.",
+    imageSrc: '/images/soup.jpeg',
+  },
+  {
+    id: 'salmon',
+    title: 'Baked Salmon',
+    description:
+      "A succulent salmon fillet baked to perfection with a hint of lemon and dill, delivering a simple yet flavorful dish.",
+    imageSrc: '/images/salmon.jpg',
+  },
+  {
+    id: 'chocolate-cake',
+    title: 'Decadent Chocolate Cake',
+    description:
+      "Indulge in layers of rich chocolate sponge topped with a velvety frosting—perfect for special occasions or a sweet treat anytime.",
+    imageSrc: '/images/chocolate-cake.jpg',
+  },
+  {
+    id: 'avocado-toast',
+    title: 'Avocado Toast',
+    description:
+      "A modern brunch favorite—mashed avocado, fresh lime, and a pinch of chili flakes on crisp, rustic bread.",
+    imageSrc: '/images/avocado-toast.jpg',
+  }
 ];
 
 export default function Home() {
@@ -45,27 +92,12 @@ export default function Home() {
       {/* Beading Venue Section reused from the component */}
       <BeadingVenueSection />
       
-      {/* Food Corner Section */}
+      {/* Food Recipes Preview Section */}
       <AnimatedSection>
-        <a id="food" />
-        <h2>Food Corner</h2>
-        <p style={{ maxWidth: '700px', margin: '1rem auto' }}>
-          Join me at the food corner where cooking is a venture of creativity! Let’s delight our taste buds with flavors and experiences that turn simple ingredients into mouthwatering dishes.
-        </p>
-        <FlashCard
-          title="Delicious Pasta"
-          description="Try out this creamy tomato-based pasta that’s super easy to make!"
-          imageSrc="/images/pasta.jpg"
-          href="/food-details/1"
-        />
-        <FlashCard
-          title="Hearty Soup"
-          description="Warm up with a classic chicken soup loaded with veggies."
-          imageSrc="/images/soup.jpg"
-          href="/food-details/2"
-        />
+        <h2 className={styles.sectionTitle}>Food Recipes</h2>
+        <FoodRecipeSlider recipes={foodRecipes} />
       </AnimatedSection>
-      
+
       {/* Stories Preview Section */}
       <AnimatedSection>
         <h2 className={styles.sectionTitle}>Stories</h2>

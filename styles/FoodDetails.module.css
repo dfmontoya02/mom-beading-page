@@ -1,0 +1,108 @@
+/* styles/FoodDetails.module.css */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* Dark overlay with a fade from transparent to black */
+  .heroOverlay {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    padding: 2rem;
+    color: #fff;
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  /* Keyframe for a subtle upward fade */
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .heroTitle {
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .heroDescription {
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  /* Details Section */
+  .detailsSection {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    animation: fadeIn 1.2s ease forwards;
+    opacity: 0; /* Hidden until fadeIn triggers */
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Card with recipe info */
+  .infoCard {
+    background-color: #fff;
+    border: 2px solid #f0c14b; /* Golden accent to match your theme */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 2rem;
+    font-family: 'Merriweather', serif;
+  }
+  
+  /* Ingredients List */
+  .ingredients {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .instructions {
+    background-color: #fafafa;
+    padding: 1rem;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    margin-bottom: 2rem;
+  }
+  
+  /* Back Button */
+  .backButton {
+    display: inline-block;
+    background-color: #8b4513;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .backButton:hover {
+    background-color: #7a3d10;
+  }
+  
